@@ -33,7 +33,7 @@ export default function App()
 //Verifica o valor anteriorn e adiciona autoCLick + multiplicador de prestigio
 setCookies *(prev + autoClickers * prestigeMultiplier);
   };
-
+// função comprar prestigio
 const handlePrestige = () => {
   if (cookies >= 1000) {
      setCookies(0);
@@ -67,7 +67,7 @@ const handlePrestige = () => {
     <View style={styles.container}>
       <Text style={styles.text}>Cookies: {cookies}</Text>
       <Text style={styles.text}>Poder de Clique: {clickPower}</Text>
-      <Text style={styles.text}>Auto-Clickers: {autoClickers}</Text>
+      <Text style={styles.text}>Prestigio: x{prestigeMultiplier}</Text>
 
       <TouchableOpacity style={styles.button} onPress={handleClick}>
         <Text style={styles.buttonText}>Clique para ganhar cookies!</Text>
@@ -80,7 +80,10 @@ const handlePrestige = () => {
       <TouchableOpacity style={styles.autoClickerButton} onPress={buyAutoClicker}>
         <Text style={styles.buttonText}>Comprar Auto-Clicker - 50 cookies</Text>
       </TouchableOpacity>
-    </View>
+
+<TouchableOpacity> style= {styles. prestigeButton} onPress={buyAutoClicker}>
+  <Text style={styles.buttonText}>Comprar Auto-CLicker - 50 cookies </Text>
+</TouchableOpacity>
   );
 }
 
