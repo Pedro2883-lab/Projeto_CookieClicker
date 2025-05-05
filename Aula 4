@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+timport React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function App() {
+export default function App() 
   const [cookies, setCookies] = useState(0);
   const [clickPower, setClickPower] = useState(1);
   const [autoClickers, setAutoClickers] = useState(0);
@@ -30,7 +30,17 @@ export default function App() {
 
   const handleClick = () => {
     setCookies(cookies + clickPower);
+//Verifica o valor anteriorn e adiciona autoCLick + multiplicador de prestigio
+setCookies *(prev + autoClickers * prestigeMultiplier);
   };
+
+const handlePrestige = () => {
+  if (cookies >= 1000) {
+     setCookies(0);
+     setClickerPower(1);
+     setAutoClicker(0);
+     setPrestigeMultiplier(prestigeMultiplier + 1);
+
 
   const buyUpgrade = () => {
     if (cookies >= 10) {
