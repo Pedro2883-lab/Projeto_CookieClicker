@@ -9,7 +9,12 @@ export default function App() {
   const [autoClickers, setAutoClickers] = useState(0);
   const [achievements, setAchievements] = useState([]);
 
-  // Lista de conquistas baseadas em metas de cookies
+ //Variáveis para conquista diária
+const [dailyGoal,setDailyGoal] = useState (100); // A meta diária é 10 cookies
+const [dailyProgress,setDailyProgress] = useState(0); // Progresso diário inicial é 0
+const [lastLogin,setLastLogin] = useState(new Date().toDateString())
+
+// Lista de conquistas baseadas em metas de cookies
   const achievementsList = [
     { id: 1, name: 'Primeiros 10 Cookies!', goal: 10 },
     { id: 2, name: 'Chegou a 100 Cookies!', goal: 100 },
