@@ -66,13 +66,28 @@ const [lastLogin,setLastLogin] = useState(new Date().toDateString())
     });
   }, [cookies, autoClickers, clickPower]);
 
-  return (
+// Checa diariamente se é um novo dia 
+useEffect (() =>{
+const interval = setInterval (() => {
+  const today = new Date (). toDateString();
+  if (today !== lasLogin){
+      setLastLogin(today)
+      setDailyGoal(Math.floor(Math.random()*100) + 50); // Gera uma nova meta diária entre 50 e 150 cookies
+
+};
+if (dailyProgress >= dailyGoal){
+   Alert.alert('Parabéns!', 'Você completou a meta diária!');
+   setDailyProgress(0); // Reseta o progresso diário
+};
+});
+return (
     <View style={styles.container}>
       <Text style={styles.text}>Cookies: {cookies}</Text>
       <Text style={styles.text}>Poder de Clique: {clickPower}</Text>
       <Text style={styles.text}>Auto-Clickers: {autoClickers}</Text>
-
-      <TouchableOpacity style={styles.button} onPress={handleClick}>
+      <Text style={styles.text}>Meta Diária: {dailyGoal} cookies</Text>
+      <Text style={styles.text}>Progresso Diário: {dailyProgress} cookies</Text> 
+       <TouchableOpacity style={styles.button} onPress={handleClick}>
         <Text style={styles.buttonText}>Clique para ganhar cookies!</Text>
       </TouchableOpacity>
 
