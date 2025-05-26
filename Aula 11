@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Alert } from 'react-native';
+import {Audio} from 'expo-nav'; //Importa o módulo de áudio do Expo
 
 export default function App() {
   const [cookies, setCookies] = useState(0);
